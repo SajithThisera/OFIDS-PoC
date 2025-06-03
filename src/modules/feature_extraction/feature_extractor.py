@@ -13,5 +13,5 @@ def extract_videomae_features(clips):
         inputs = video_mae_feature_extractor(images=clip, return_tensors="pt")
         with torch.no_grad():
             outputs = video_mae_model(**inputs)
-        features.append(outputs.logits)  # or select intermediate layers if needed
+        features.append(outputs.logits)
     return torch.cat(features, dim=0).numpy()

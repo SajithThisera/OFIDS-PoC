@@ -4,7 +4,6 @@ from transformers import VideoMAEForVideoClassification
 
 
 def train_videomae_model(train_features, train_labels, learning_rate=1e-4, epochs=10):
-    #device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
     device = torch.device("cpu")
     model = VideoMAEForVideoClassification.from_pretrained("MCG-NJU/videomae-base").to("cpu")
     model.to(device)
